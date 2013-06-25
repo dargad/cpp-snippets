@@ -1,5 +1,4 @@
-cpp-snippets
-============
+# cpp-snippets
 
 Various C++ code snippets
 

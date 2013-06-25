@@ -11,7 +11,7 @@ There are 3 algorithms implemented in hanoi.cpp:
 ## BUILDING
 
 It's a regular CMake setup:
-`
+```
 cmake .
 make
-`
+```

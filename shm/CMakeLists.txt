@@ -15,18 +15,15 @@ IF(Boost_FOUND)
         server.cpp
     )
 
-    SET(EXECS client target)
-
-    FOREACH(exec ${EXECS})
-
-    ADD_EXECUTABLE(${exec} ${SRC_CLIENT})
-
+    ADD_EXECUTABLE(client ${SRC_CLIENT})
     IF(UNIX)
-        TARGET_LINK_LIBRARIES(${exec} rt)
+        TARGET_LINK_LIBRARIES(client pthread rt)
     ENDIF(UNIX)
 
-    ENDFOREACH(exec)
-
+    ADD_EXECUTABLE(server ${SRC_SERVER})
+    IF(UNIX)
+        TARGET_LINK_LIBRARIES(server pthread rt)
+    ENDIF(UNIX)
 
 ELSE(Boost_FOUND)
 MESSAGE("Finding boost failed :(")
